@@ -22,7 +22,8 @@ def CreateNamespace(args):
 
 def CreateDeployment(args):
     logging.info("CreateDeployment has been started!")
-    massive_work(10000000000)
+    for _ in range(100000):
+        massive_work(100000)
     logging.info("CreateDeployment has been finished!")
 
 def CreateService(args):
