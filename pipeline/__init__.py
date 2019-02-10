@@ -2,8 +2,8 @@ from gaiasdk import sdk
 import logging
 import time
 
-def massive_work():
-    [logging.debug("work id:{}".format(i)) for i in range(100000) if i%500 == 0]
+def massive_work(n):
+    [logging.debug("work id:{}".format(i)) for i in range(n) if i%500 == 0]
 
 def CreateUser(args):
     logging.info("CreateUser has been started!")
@@ -22,17 +22,17 @@ def CreateNamespace(args):
 
 def CreateDeployment(args):
     logging.info("CreateDeployment has been started!")
-    massive_work()
+    massive_work(10000000000)
     logging.info("CreateDeployment has been finished!")
 
 def CreateService(args):
     logging.info("CreateService has been started!")
-    massive_work()
+    massive_work(100)
     logging.info("CreateService has been finished!")
 
 def CreateIngress(args):
     logging.info("CreateIngress has been started!")
-    massive_work()
+    massive_work(100000)
     time.sleep(5)
     logging.info("CreateIngress has been finished!")
 
